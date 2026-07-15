@@ -1,7 +1,7 @@
 // src/controller.ts
 import { fetchRdf } from "@jeswr/fetch-rdf";
 
-// ../solid-auth-core/node_modules/@jeswr/solid-session-restore/dist/remembered-account.js
+// ../solid-session-restore/dist/remembered-account.js
 var DEFAULT_REMEMBERED_ACCOUNT_KEY = "solid-session-restore.remembered-account";
 var RememberedAccount = class {
   #key;
@@ -62,7 +62,7 @@ var RememberedAccount = class {
   }
 };
 
-// ../solid-auth-core/node_modules/@jeswr/solid-session-restore/dist/restore-session.js
+// ../solid-session-restore/dist/restore-session.js
 import * as oauth from "oauth4webapi";
 var EXPIRY_SKEW_MS = 3e4;
 var isLoopback = (host) => host === "localhost" || host === "127.0.0.1" || host === "[::1]";
@@ -260,7 +260,7 @@ async function hasPersisted(store, issuer) {
   }
 }
 
-// ../solid-auth-core/node_modules/@jeswr/solid-session-restore/dist/session-persistence.js
+// ../solid-session-restore/dist/session-persistence.js
 var DEFAULT_DB_NAME = "solid-session-restore:sessions";
 var DB_VERSION = 1;
 var STORE_NAME = "sessions";
@@ -333,7 +333,7 @@ function indexedDbAvailable() {
   return typeof globalThis.indexedDB !== "undefined";
 }
 
-// ../solid-auth-core/node_modules/@jeswr/solid-session-restore/dist/session-restore.js
+// ../solid-session-restore/dist/session-restore.js
 async function decideSilentRestore(inputs) {
   const { lastActiveWebId, remembered, restoreIssuer } = inputs;
   const equal = inputs.webIdsEqual ?? webIdsEqual;
